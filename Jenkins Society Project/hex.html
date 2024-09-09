@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hex</title>
+    <style>
+        body {
+            background: linear-gradient(135deg, #ff5f6d, #ffc371); /* Gradient with vibrant hex colors */
+            color: #fff; /* White text for contrast */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Verdana', sans-serif; /* Clean, modern font */
+            text-align: center;
+        }
+        h1 {
+            font-size: 1.5em;
+            line-height: 1.4;
+            letter-spacing: 1px;
+            color: #fcfcfc; /* Dark grey for readability */
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.4); /* Slightly transparent background for contrast */
+            border-radius: 10px; /* Rounded corners */
+        }
+        h1::before {
+            content: 'Hex: #FF0000'; /* Color code for red to hint at the theme */
+            color: #FF0000; /* Red color */
+            font-size: 2em;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            opacity: 0.1;
+            transform: rotate(-10deg);
+        }
+        button.hint-btn {
+    position: absolute;
+    bottom: 50px; /* Adjusts how far from the bottom the button is */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: #e0e0e0;
+    border: 2px solid #ff6347;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button.hint-btn:hover {
+    background-color: #ff6347;
+    color: #0d0d0d;
+}
+
+.hint {
+    position: absolute;
+    bottom: 90px; /* Adjusts how far from the bottom the hint text is */
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.2em;
+    color: #ff6347;
+    opacity: 0;
+    transition: opacity 0.5s;
+    text-align: center;
+    display: none;
+}
+
+.hint.show {
+    display: block;
+    opacity: 1;
+}
+    </style>
+</head>
+<body>
+    <h1>You've made it pretty far, and I think the rhyming is below par. The next answer you seek is seen as the color of failure in the realm of computing, often meeting it when your computer goes just a little too far.</h1>
+    <button class="hint-btn" onclick="toggleHint()">Show Hint</button>
+    <p class="hint" id="hint">Hint: What happens when your computer crashes?</p>
+    
+    <script>
+        function toggleHint() {
+            const hint = document.getElementById("hint");
+            hint.classList.toggle("show");
+        }
+    </script>
+</body>
+</html>

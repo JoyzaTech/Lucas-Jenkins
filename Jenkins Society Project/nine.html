@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nine</title>
+    <style>
+        body {
+            background-color: #0066cc; /* AOL's classic blue background */
+            color: #ffffff; /* White text for contrast */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Arial', sans-serif; /* Classic, clean font */
+            text-align: center;
+        }
+        h1 {
+            font-size: 1.5em;
+            line-height: 1.6;
+            letter-spacing: 1px;
+            color: #ffcc00; /* AOL yellow text for highlight */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
+            padding: 20px;
+            background-color: #003366; /* Darker blue background for the text block */
+            border-radius: 10px; /* Rounded corners */
+            border: 2px solid #ffffff; /* White border for the text block */
+        }
+        .aol-icon {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 5em;
+            color: #ffcc00; /* AOL yellow */
+            transform: rotate(-15deg); /* Slight rotation for a retro effect */
+            z-index: 1;
+        }
+        button.hint-btn {
+    position: absolute;
+    bottom: 50px; /* Adjusts how far from the bottom the button is */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: #e0e0e0;
+    border: 2px solid #bdb128;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button.hint-btn:hover {
+    background-color: #bdb128;
+    color: #0d0d0d;
+}
+
+.hint {
+    position: absolute;
+    bottom: 90px; /* Adjusts how far from the bottom the hint text is */
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.2em;
+    color: #bdb128;
+    opacity: 0;
+    transition: opacity 0.5s;
+    text-align: center;
+    display: none;
+}
+
+.hint.show {
+    display: block;
+    opacity: 1;
+}
+    </style>
+</head>
+<body>
+    <h1>Considered the first social media platform, its name an acronym with the length of three, killed by the platform that's since been surpassed by a company reprented by a big blue 'f'</h1>
+    <button class="hint-btn" onclick="toggleHint()">Show Hint</button>
+<p class="hint" id="hint">Hint: This program is heavily associated with dial up internet.</p>
+
+<script>
+    function toggleHint() {
+        const hint = document.getElementById("hint");
+        hint.classList.toggle("show");
+    }
+</script>
+</body>
+</html>

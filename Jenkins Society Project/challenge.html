@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenge</title>
+    <style>
+        body {
+            background-color: #0d0d0d; /* Very dark background for a creepy vibe */
+            color: #e0e0e0; /* Light grey text to contrast the darkness */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Lucida Console', Monaco, monospace; /* Monospace font for a cold, digital feel */
+            position: relative;
+            overflow: hidden;
+        }
+        h1 {
+            font-size: 1.8em;
+            text-align: center;
+            color: #ff6347; /* Creepy reddish-orange color */
+            letter-spacing: 1.5px;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8); /* Dark shadow for eerie depth */
+            line-height: 1.4;
+            animation: flicker 3s infinite; /* Adds a flickering effect */
+        }
+        @keyframes flicker {
+            0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+                opacity: 1;
+            }
+            20%, 24%, 55% {
+                opacity: 0.3;
+            }
+        }
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle, transparent, rgba(0, 0, 0, 0.95)); /* Dark glow at edges */
+            z-index: -1;
+        }
+        body::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 600px;
+            height: 600px;
+            background: url('https://cdn.pixabay.com/photo/2013/07/13/12/44/smiley-160971_960_720.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            opacity: 0.05; /* Faint ghostly image */
+            transform: translate(-50%, -50%) rotate(15deg);
+        }
+        button.hint-btn {
+    position: absolute;
+    bottom: 50px; /* Adjusts how far from the bottom the button is */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: #e0e0e0;
+    border: 2px solid #ff6347;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button.hint-btn:hover {
+    background-color: #ff6347;
+    color: #0d0d0d;
+}
+
+.hint {
+    position: absolute;
+    bottom: 90px; /* Adjusts how far from the bottom the hint text is */
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.2em;
+    color: #ff6347;
+    opacity: 0;
+    transition: opacity 0.5s;
+    text-align: center;
+    display: none;
+}
+
+.hint.show {
+    display: block;
+    opacity: 1;
+}
+    </style>
+</head>
+<body>
+    <h1>I start with an opening, end with a close, I'm used in HTML and nested in rows. A big search company centered me to make their login page better than it could ever be.</h1>
+    <button class="hint-btn" onclick="toggleHint()">Show Hint</button>
+<p class="hint" id="hint">Hint: A common tag in html.</p>
+
+<script>
+    function toggleHint() {
+        const hint = document.getElementById("hint");
+        hint.classList.toggle("show");
+    }
+</script>
+</body>
+</html>

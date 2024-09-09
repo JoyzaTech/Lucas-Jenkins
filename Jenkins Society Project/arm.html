@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arm</title>
+    <style>
+        body {
+            background-color: #333; /* Dark metallic background */
+            color: #00ff66; /* Green for text to mimic the look of circuitry */
+            font-family: 'Courier New', Courier, monospace; /* Monospace font for a techy feel */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+        }
+        .cpu-container {
+            background-color: #1a1a1a; /* Dark grey background for the CPU area */
+            border: 5px solid #666; /* Metallic border */
+            padding: 40px;
+            border-radius: 10px; /* Rounded corners for a chip-like look */
+            box-shadow: 0 0 20px rgba(0, 255, 102, 0.7); /* Neon glow effect */
+            width: 80%;
+            max-width: 800px;
+            position: relative;
+        }
+        h1 {
+            font-size: 1.5em;
+            line-height: 1.5;
+            letter-spacing: 2px; /* Widens text to mimic etched text on hardware */
+            text-shadow: 0 0 5px rgba(0, 255, 102, 0.8); /* Glowing effect around the text */
+            margin: 0;
+        }
+        .grid {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: linear-gradient(0deg, transparent 90%, #444 90%), linear-gradient(90deg, transparent 90%, #444 90%);
+            background-size: 20px 20px; /* Grid pattern to mimic a circuit board */
+            z-index: -1;
+            opacity: 0.3; /* Subtle grid effect */
+        }
+        .circuits {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background-image: radial-gradient(circle at 50% 50%, #00ff66 2%, transparent 3%), 
+                              radial-gradient(circle at 30% 80%, #00ff66 1%, transparent 3%),
+                              radial-gradient(circle at 70% 20%, #00ff66 1%, transparent 3%);
+            background-size: 20px 20px;
+            z-index: -2;
+            opacity: 0.6;
+        }
+        button.hint-btn {
+    position: absolute;
+    bottom: 50px; /* Adjusts how far from the bottom the button is */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: #e0e0e0;
+    border: 2px solid #2bbd28;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button.hint-btn:hover {
+    background-color: #2bbd28;
+    color: #0d0d0d;
+}
+
+.hint {
+    position: absolute;
+    bottom: 90px; /* Adjusts how far from the bottom the hint text is */
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.2em;
+    color: #2bbd28;
+    opacity: 0;
+    transition: opacity 0.5s;
+    text-align: center;
+    display: none;
+}
+
+.hint.show {
+    display: block;
+    opacity: 1;
+}
+    </style>
+</head>
+<body>
+    <div class="cpu-container">
+        <h1>This number was skipped in the naming scheme, of a smart phone and an operating system, never even released for testing just to make their name more pleasing.</h1>
+        <div class="grid"></div>
+        <div class="circuits"></div>
+    </div>
+    <button class="hint-btn" onclick="toggleHint()">Show Hint</button>
+<p class="hint" id="hint">Hint: The smart phone was an iPhone.</p>
+
+<script>
+    function toggleHint() {
+        const hint = document.getElementById("hint");
+        hint.classList.toggle("show");
+    }
+</script>
+</body>
+</html>

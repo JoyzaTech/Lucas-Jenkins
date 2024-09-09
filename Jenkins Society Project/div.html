@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Div</title>
+    <style>
+        body {
+            background-color: #f4f4f4; /* Light grey background, similar to Google's clean look */
+            color: #333; /* Dark grey for readable text */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Arial', sans-serif; /* Google's simple, clean font style */
+        }
+        h1 {
+            font-size: 2em;
+            text-align: center;
+            letter-spacing: 1px;
+            line-height: 1.4;
+        }
+        h1 span:nth-child(1) {
+            color: #4285F4; /* Google Blue */
+        }
+        h1 span:nth-child(2) {
+            color: #EA4335; /* Google Red */
+        }
+        h1 span:nth-child(3) {
+            color: #FBBC05; /* Google Yellow */
+        }
+        h1 span:nth-child(4) {
+            color: #34A853; /* Google Green */
+        }
+        h1::before {
+            content: 'G';
+            color: #4285F4;
+            font-size: 6em;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            opacity: 0.05;
+            transform: rotate(-15deg);
+        }
+        button.hint-btn {
+    position: absolute;
+    bottom: 50px; /* Adjusts how far from the bottom the button is */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: #e0e0e0;
+    border: 2px solid #4285F4;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button.hint-btn:hover {
+    background-color: #4285F4;
+    color: #0d0d0d;
+}
+
+.hint {
+    position: absolute;
+    bottom: 90px; /* Adjusts how far from the bottom the hint text is */
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.2em;
+    color: #4285F4;
+    opacity: 0;
+    transition: opacity 0.5s;
+    text-align: center;
+    display: none;
+}
+
+.hint.show {
+    display: block;
+    opacity: 1;
+}
+    </style>
+</head>
+<body>
+    <h1>
+        <span>Excellent</span> <span>work</span>, <span>new</span> <span>trainee</span>.<br>
+        The next answer's length is three, bigger than binary and represents colors that billions see.
+    </h1>
+    <button class="hint-btn" onclick="toggleHint()">Show Hint</button>
+<p class="hint" id="hint">Hint: The answer is a type of code used in many art programs.</p>
+
+<script>
+    function toggleHint() {
+        const hint = document.getElementById("hint");
+        hint.classList.toggle("show");
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blue</title>
+    <style>
+        body {
+            background-color: #0e4a8e; /* Classic Windows BSOD blue */
+            color: #fff; /* White text for high contrast */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Courier New', Courier, monospace; /* Monospace font for that techy feel */
+            text-align: center;
+            position: relative;
+        }
+        h1 {
+            font-size: 1.2em;
+            line-height: 1.5;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); /* Subtle shadow for depth */
+            padding: 20px;
+            border: 1px solid #fff; /* White border for the text block */
+            border-radius: 5px;
+            background-color: rgba(0, 0, 0, 0.3); /* Slightly transparent background for the text block */
+        }
+        h1::before {
+            content: 'STOP: 0x0000007B'; /* Typical BSOD error code */
+            display: block;
+            font-size: 0.8em;
+            color: #f0f0f0; /* Slightly off-white for the code */
+            margin-bottom: 10px;
+        }
+        body::before {
+            content: 'Your PC ran into a problem and needs to restart.';
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.9em;
+            color: #fff;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+        }
+        .frown {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 6em;
+            color: #fff;
+            transform: rotate(-15deg);
+            z-index: 1;
+        }
+        button.hint-btn {
+    position: absolute;
+    bottom: 50px; /* Adjusts how far from the bottom the button is */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: #e0e0e0;
+    border: 2px solid #477bff;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button.hint-btn:hover {
+    background-color: #477bff;
+    color: #0d0d0d;
+}
+
+.hint {
+    position: absolute;
+    bottom: 90px; /* Adjusts how far from the bottom the hint text is */
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.2em;
+    color: #477bff;
+    opacity: 0;
+    transition: opacity 0.5s;
+    text-align: center;
+    display: none;
+}
+
+.hint.show {
+    display: block;
+    opacity: 1;
+}
+    </style>
+</head>
+<body>
+    <div class="frown">:(</div>    
+<h1>The architecture that can provide unmatched battery life and performance, its name is a length of three, also used to pull yourself up or lead a partner in dance.</h1>
+<button class="hint-btn" onclick="toggleHint()">Show Hint</button>
+<p class="hint" id="hint">Hint: The answer is a type of architecture, like x86.</p>
+
+<script>
+    function toggleHint() {
+        const hint = document.getElementById("hint");
+        hint.classList.toggle("show");
+    }
+</script>
+</body>
+</html>
